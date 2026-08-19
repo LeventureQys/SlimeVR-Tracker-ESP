@@ -1,0 +1,3 @@
+#pragma once
+
+#define HAND_RIG_TEST_MODEL_PATH u8"@CMAKE_CURRENT_SOURCE_DIR@/models/3D带骨架手模.fbx"

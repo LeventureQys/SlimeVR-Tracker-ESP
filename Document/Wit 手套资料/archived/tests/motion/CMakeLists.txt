@@ -1,0 +1,6 @@
+add_executable(test_handdemo_motion test_motion.cpp)
+qt6_wrap_cpp(test_handdemo_motion_moc test_motion.cpp TARGET test_handdemo_motion)
+target_sources(test_handdemo_motion PRIVATE ${test_handdemo_motion_moc})
+target_compile_features(test_handdemo_motion PRIVATE cxx_std_17)
+target_link_libraries(test_handdemo_motion PRIVATE handdemo_motion Qt6::Test)
+add_test(NAME handdemo_motion COMMAND test_handdemo_motion)

@@ -1,0 +1,7 @@
+build/
+outputs/
+.idea/
+.vs/
+.gradle/
+local.properties
+Adapter/wit-example-ble5.zip

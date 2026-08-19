@@ -1,0 +1,134 @@
+<!doctype html>
+<!--
+  灵巧手上位机：显示主控输出的姿态帧。
+  页面不保存标定状态；刷新即清除已加载数据。
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="灵巧手上位机：串口接收主控姿态并三维显示" />
+  <title>灵巧手 · 上位机</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!--
+    页面职责：读取主控姿态帧，再显示三维手与曲线。
+    四元数输入为 Hamilton [w,x,y,z]；viewer.js 只重排成 Three.js 构造顺序 [x,y,z,w]。
+  -->
+  <main class="app-shell">
+    <section class="viewport-panel" aria-label="三维手姿态视图">
+      <div id="scene" class="scene" aria-label="可拖动旋转和缩放的三维人手"></div>
+
+      <header class="scene-header">
+        <div>
+          <p class="eyebrow">DEXTEROUS HAND</p>
+          <h1>灵巧手上位机</h1>
+          <p class="scene-subtitle">有线串口实时 · bend / sway</p>
+        </div>
+        <div class="scene-badges" aria-label="当前运行状态">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="sceneStatus">等待数据</span>
+          <span class="divider"></span>
+          <span id="fpsValue">-- FPS</span>
+        </div>
+      </header>
+
+      <div class="scene-tools" aria-label="视图工具">
+        <button id="resetViewButton" type="button" title="恢复默认视角">重置视角</button>
+        <button id="toggleSkinButton" type="button" aria-pressed="true" title="显示或隐藏半透明软组织">软组织</button>
+        <button id="toggleGridButton" type="button" aria-pressed="true" title="显示或隐藏空间参考网格">网格</button>
+      </div>
+
+      <div class="axis-legend" aria-label="三维坐标轴图例">
+        <span class="axis-x">X</span><span class="axis-y">Y</span><span class="axis-z">Z</span>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="数据与角度控制面板">
+      <section class="panel-section source-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">WIRED SERIAL</p>
+            <h2>有线串口</h2>
+          </div>
+          <span id="serialBadge" class="schema-badge">未连接</span>
+        </div>
+        <div class="serial-row">
+          <label class="serial-field">端口
+            <select id="serialPortSelect" aria-label="串口端口"></select>
+          </label>
+          <label class="serial-field">波特率
+            <select id="serialBaudSelect" aria-label="波特率">
+              <option value="115200">115200</option>
+              <option value="460800">460800</option>
+              <option value="921600" selected>921600</option>
+              <option value="3000000">3000000</option>
+            </select>
+          </label>
+        </div>
+        <div class="source-actions">
+          <button id="refreshPortsButton" type="button">刷新端口</button>
+          <button id="serialConnectButton" class="primary-button" type="button">连接串口</button>
+          <button id="serialDisconnectButton" type="button" disabled>断开</button>
+          <button id="serialCalibrateButton" type="button" disabled>重新标定</button>
+        </div>
+        <p id="serialStatus" class="file-status">接收主控姿态帧（AA55）。连接后可点「重新标定」，张开手静止约 3 s。</p>
+      </section>
+
+      <section class="panel-section summary-section">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">FRAME READOUT</p>
+            <h2>当前帧</h2>
+          </div>
+          <output id="frameCounter">0 / 0</output>
+        </div>
+        <div class="summary-grid">
+          <div><span>时间</span><strong id="summaryTime">0.000 s</strong></div>
+          <div><span>采样间隔</span><strong id="sampleInterval">-- ms</strong></div>
+          <div><span>最大弯曲</span><strong id="maxBend">0.0°</strong></div>
+          <div><span>最大侧摆</span><strong id="maxSway">0.0°</strong></div>
+        </div>
+      </section>
+
+      <section class="panel-section finger-section">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">PALM-RELATIVE ANGLES</p>
+            <h2>五指角度</h2>
+          </div>
+          <span class="unit-label">deg</span>
+        </div>
+        <div id="fingerRows" class="finger-rows"></div>
+      </section>
+
+      <section class="panel-section chart-section">
+        <div class="section-heading compact chart-heading">
+          <div>
+            <p class="section-kicker">ANGLE TRACE</p>
+            <h2 id="chartTitle">食指曲线</h2>
+          </div>
+          <div class="chart-legend"><span class="bend-key">bend</span><span class="sway-key">sway</span></div>
+        </div>
+        <canvas id="angleChart" width="620" height="250" aria-label="选中手指 bend 和 sway 曲线"></canvas>
+        <p class="chart-note">点击上方任意手指切换曲线；竖线表示当前帧。</p>
+      </section>
+
+      <footer class="panel-footer">
+        <span>浏览器只呈现主控输出的姿态结果</span>
+      </footer>
+    </aside>
+  </main>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="./js/viewer.js?v=left-hand-only-1"></script>
+</body>
+</html>

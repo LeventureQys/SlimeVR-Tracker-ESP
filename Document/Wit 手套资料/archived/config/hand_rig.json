@@ -1,0 +1,32 @@
+{
+  "rootBone": "Bone",
+  "palmBone": "Bone",
+  "joints": {
+    "Bone.001": { "displayName": "候选链1-基部", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [-12,0,0], "maxDegrees": [12,0,90], "lockedAxes": [0,1,0], "editable": true, "coupling": 1.0 },
+    "Bone.011": { "displayName": "候选链1-中节", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [0,0,0], "maxDegrees": [0,0,110], "lockedAxes": [1,1,0], "editable": true, "coupling": 1.0 },
+    "Bone.012": { "displayName": "候选链1-远节", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [0,0,0], "maxDegrees": [0,0,80], "lockedAxes": [1,1,0], "editable": true, "coupling": 0.67 },
+    "Bone.013": { "displayName": "候选链1-末端控制", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [0,0,0], "maxDegrees": [0,0,20], "lockedAxes": [1,1,0], "editable": false, "coupling": 0.0 },
+    "Bone.002": { "displayName": "候选链2-基部", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [-12,0,0], "maxDegrees": [12,0,90], "lockedAxes": [0,1,0], "editable": true, "coupling": 1.0 },
+    "Bone.008": { "displayName": "候选链2-中节", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [0,0,0], "maxDegrees": [0,0,110], "lockedAxes": [1,1,0], "editable": true, "coupling": 1.0 },
+    "Bone.009": { "displayName": "候选链2-远节", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [0,0,0], "maxDegrees": [0,0,80], "lockedAxes": [1,1,0], "editable": true, "coupling": 0.67 },
+    "Bone.010": { "displayName": "候选链2-末端控制", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [0,0,0], "maxDegrees": [0,0,20], "lockedAxes": [1,1,0], "editable": false, "coupling": 0.0 },
+    "Bone.003": { "displayName": "候选链3-基部", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [-10,0,0], "maxDegrees": [10,0,90], "lockedAxes": [0,1,0], "editable": true, "coupling": 1.0 },
+    "Bone.005": { "displayName": "候选链3-中节", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [0,0,0], "maxDegrees": [0,0,110], "lockedAxes": [1,1,0], "editable": true, "coupling": 1.0 },
+    "Bone.006": { "displayName": "候选链3-远节", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [0,0,0], "maxDegrees": [0,0,80], "lockedAxes": [1,1,0], "editable": true, "coupling": 0.67 },
+    "Bone.007": { "displayName": "候选链3-末端控制", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [0,0,0], "maxDegrees": [0,0,20], "lockedAxes": [1,1,0], "editable": false, "coupling": 0.0 },
+    "Bone.004": { "displayName": "候选链4-基部", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [-10,0,0], "maxDegrees": [10,0,90], "lockedAxes": [0,1,0], "editable": true, "coupling": 1.0 },
+    "Bone.014": { "displayName": "候选链4-中节", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [0,0,0], "maxDegrees": [0,0,110], "lockedAxes": [1,1,0], "editable": true, "coupling": 1.0 },
+    "Bone.015": { "displayName": "候选链4-远节", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [0,0,0], "maxDegrees": [0,0,80], "lockedAxes": [1,1,0], "editable": true, "coupling": 0.67 },
+    "Bone.016": { "displayName": "候选链4-末端控制", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [0,0,0], "maxDegrees": [0,0,20], "lockedAxes": [1,1,0], "editable": false, "coupling": 0.0 },
+    "Bone.017": { "displayName": "候选链5-基部", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [-25,0,0], "maxDegrees": [25,0,70], "lockedAxes": [0,1,0], "editable": true, "coupling": 1.0 },
+    "Bone.018": { "displayName": "候选链5-中节", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [0,0,0], "maxDegrees": [0,0,80], "lockedAxes": [1,1,0], "editable": true, "coupling": 0.85 },
+    "Bone.019": { "displayName": "候选链5-远节", "flexionAxis": [0,0,1], "abductionAxis": [1,0,0], "minDegrees": [0,0,0], "maxDegrees": [0,0,70], "lockedAxes": [1,1,0], "editable": true, "coupling": 0.55 }
+  },
+  "fingers": {
+    "thumb":  { "bones": ["Bone.017","Bone.018","Bone.019"], "sensorFlexionAxis": [0,0,1], "sensorAbductionAxis": [1,0,0], "sensorMinDegrees": 0, "sensorMaxDegrees": 75, "sensorAbductionMinDegrees": -25, "sensorAbductionMaxDegrees": 25, "sensorCorrection": [1,0,0,0] },
+    "index":  { "bones": ["Bone.001","Bone.011","Bone.012","Bone.013"], "sensorFlexionAxis": [0,0,1], "sensorAbductionAxis": [1,0,0], "sensorMinDegrees": 0, "sensorMaxDegrees": 90, "sensorAbductionMinDegrees": -12, "sensorAbductionMaxDegrees": 12, "sensorCorrection": [1,0,0,0] },
+    "middle": { "bones": ["Bone.002","Bone.008","Bone.009","Bone.010"], "sensorFlexionAxis": [0,0,1], "sensorAbductionAxis": [1,0,0], "sensorMinDegrees": 0, "sensorMaxDegrees": 90, "sensorAbductionMinDegrees": -12, "sensorAbductionMaxDegrees": 12, "sensorCorrection": [1,0,0,0] },
+    "ring":   { "bones": ["Bone.003","Bone.005","Bone.006","Bone.007"], "sensorFlexionAxis": [0,0,1], "sensorAbductionAxis": [1,0,0], "sensorMinDegrees": 0, "sensorMaxDegrees": 90, "sensorAbductionMinDegrees": -10, "sensorAbductionMaxDegrees": 10, "sensorCorrection": [1,0,0,0] },
+    "little": { "bones": ["Bone.004","Bone.014","Bone.015","Bone.016"], "sensorFlexionAxis": [0,0,1], "sensorAbductionAxis": [1,0,0], "sensorMinDegrees": 0, "sensorMaxDegrees": 90, "sensorAbductionMinDegrees": -10, "sensorAbductionMaxDegrees": 10, "sensorCorrection": [1,0,0,0] }
+  }
+}
