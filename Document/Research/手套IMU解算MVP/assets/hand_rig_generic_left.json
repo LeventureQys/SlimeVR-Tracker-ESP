@@ -1,0 +1,1047 @@
+{
+  "schemaVersion": 1,
+  "skeletonId": "generic-hand-left-v1",
+  "handSide": "left",
+  "rootName": "wrist",
+  "joints": [
+    {
+      "name": "wrist",
+      "parentName": "",
+      "fingerIndex": -1,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "thumb-metacarpal",
+      "parentName": "wrist",
+      "fingerIndex": 0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.35,
+        1,
+        0.25
+      ]
+    },
+    {
+      "name": "thumb-phalanx-proximal",
+      "parentName": "thumb-metacarpal",
+      "fingerIndex": 0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.55,
+        0,
+        0.25
+      ]
+    },
+    {
+      "name": "thumb-phalanx-distal",
+      "parentName": "thumb-phalanx-proximal",
+      "fingerIndex": 0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.9,
+        0,
+        0.1
+      ]
+    },
+    {
+      "name": "thumb-tip",
+      "parentName": "thumb-phalanx-distal",
+      "fingerIndex": 0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        0,
+        0,
+        0
+      ],
+      "maximumDegrees": [
+        0,
+        0,
+        0
+      ],
+      "lockedAxes": [
+        1,
+        1,
+        1
+      ],
+      "coupling": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "index-finger-metacarpal",
+      "parentName": "wrist",
+      "fingerIndex": 1.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.35,
+        1,
+        0.25
+      ]
+    },
+    {
+      "name": "index-finger-phalanx-proximal",
+      "parentName": "index-finger-metacarpal",
+      "fingerIndex": 1.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.55,
+        0,
+        0.25
+      ]
+    },
+    {
+      "name": "index-finger-phalanx-intermediate",
+      "parentName": "index-finger-phalanx-proximal",
+      "fingerIndex": 1.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.75,
+        0,
+        0.15
+      ]
+    },
+    {
+      "name": "index-finger-phalanx-distal",
+      "parentName": "index-finger-phalanx-intermediate",
+      "fingerIndex": 1.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.9,
+        0,
+        0.1
+      ]
+    },
+    {
+      "name": "index-finger-tip",
+      "parentName": "index-finger-phalanx-distal",
+      "fingerIndex": 1.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        0,
+        0,
+        0
+      ],
+      "maximumDegrees": [
+        0,
+        0,
+        0
+      ],
+      "lockedAxes": [
+        1,
+        1,
+        1
+      ],
+      "coupling": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "middle-finger-metacarpal",
+      "parentName": "wrist",
+      "fingerIndex": 2.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.35,
+        1,
+        0.25
+      ]
+    },
+    {
+      "name": "middle-finger-phalanx-proximal",
+      "parentName": "middle-finger-metacarpal",
+      "fingerIndex": 2.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.55,
+        0,
+        0.25
+      ]
+    },
+    {
+      "name": "middle-finger-phalanx-intermediate",
+      "parentName": "middle-finger-phalanx-proximal",
+      "fingerIndex": 2.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.75,
+        0,
+        0.15
+      ]
+    },
+    {
+      "name": "middle-finger-phalanx-distal",
+      "parentName": "middle-finger-phalanx-intermediate",
+      "fingerIndex": 2.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.9,
+        0,
+        0.1
+      ]
+    },
+    {
+      "name": "middle-finger-tip",
+      "parentName": "middle-finger-phalanx-distal",
+      "fingerIndex": 2.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        0,
+        0,
+        0
+      ],
+      "maximumDegrees": [
+        0,
+        0,
+        0
+      ],
+      "lockedAxes": [
+        1,
+        1,
+        1
+      ],
+      "coupling": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "ring-finger-metacarpal",
+      "parentName": "wrist",
+      "fingerIndex": 3.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.35,
+        1,
+        0.25
+      ]
+    },
+    {
+      "name": "ring-finger-phalanx-proximal",
+      "parentName": "ring-finger-metacarpal",
+      "fingerIndex": 3.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.55,
+        0,
+        0.25
+      ]
+    },
+    {
+      "name": "ring-finger-phalanx-intermediate",
+      "parentName": "ring-finger-phalanx-proximal",
+      "fingerIndex": 3.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.75,
+        0,
+        0.15
+      ]
+    },
+    {
+      "name": "ring-finger-phalanx-distal",
+      "parentName": "ring-finger-phalanx-intermediate",
+      "fingerIndex": 3.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.9,
+        0,
+        0.1
+      ]
+    },
+    {
+      "name": "ring-finger-tip",
+      "parentName": "ring-finger-phalanx-distal",
+      "fingerIndex": 3.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        0,
+        0,
+        0
+      ],
+      "maximumDegrees": [
+        0,
+        0,
+        0
+      ],
+      "lockedAxes": [
+        1,
+        1,
+        1
+      ],
+      "coupling": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "pinky-finger-metacarpal",
+      "parentName": "wrist",
+      "fingerIndex": 4.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.35,
+        1,
+        0.25
+      ]
+    },
+    {
+      "name": "pinky-finger-phalanx-proximal",
+      "parentName": "pinky-finger-metacarpal",
+      "fingerIndex": 4.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.55,
+        0,
+        0.25
+      ]
+    },
+    {
+      "name": "pinky-finger-phalanx-intermediate",
+      "parentName": "pinky-finger-phalanx-proximal",
+      "fingerIndex": 4.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.75,
+        0,
+        0.15
+      ]
+    },
+    {
+      "name": "pinky-finger-phalanx-distal",
+      "parentName": "pinky-finger-phalanx-intermediate",
+      "fingerIndex": 4.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        -10,
+        -20,
+        -25
+      ],
+      "maximumDegrees": [
+        95,
+        20,
+        25
+      ],
+      "lockedAxes": [
+        0,
+        0,
+        0
+      ],
+      "coupling": [
+        0.9,
+        0,
+        0.1
+      ]
+    },
+    {
+      "name": "pinky-finger-tip",
+      "parentName": "pinky-finger-phalanx-distal",
+      "fingerIndex": 4.0,
+      "flexionAxis": [
+        1,
+        0,
+        0
+      ],
+      "abductionAxis": [
+        0,
+        1,
+        0
+      ],
+      "twistAxis": [
+        0,
+        0,
+        1
+      ],
+      "minimumDegrees": [
+        0,
+        0,
+        0
+      ],
+      "maximumDegrees": [
+        0,
+        0,
+        0
+      ],
+      "lockedAxes": [
+        1,
+        1,
+        1
+      ],
+      "coupling": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "mountOrientations": [
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ]
+  ],
+  "missingFrames": {
+    "heldDurationMs": 150,
+    "returnDurationMs": 350,
+    "recoveredDurationMs": 200,
+    "heldConfidencePerSecond": 0.8,
+    "recoveryDegreesPerSecond": 360
+  }
+}

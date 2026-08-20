@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "skeletonId": "generic-hand-left-v1",
+  "sensors": [
+    {"address": 80, "mountOrientation": [1,0,0,0], "accelerometerRangeG": 16, "gyroscopeRangeDps": 2000},
+    {"address": 81, "mountOrientation": [1,0,0,0], "accelerometerRangeG": 16, "gyroscopeRangeDps": 2000},
+    {"address": 82, "mountOrientation": [1,0,0,0], "accelerometerRangeG": 16, "gyroscopeRangeDps": 2000},
+    {"address": 83, "mountOrientation": [1,0,0,0], "accelerometerRangeG": 16, "gyroscopeRangeDps": 2000},
+    {"address": 84, "mountOrientation": [1,0,0,0], "accelerometerRangeG": 16, "gyroscopeRangeDps": 2000},
+    {"address": 85, "mountOrientation": [1,0,0,0], "accelerometerRangeG": 16, "gyroscopeRangeDps": 2000}
+  ]
+}

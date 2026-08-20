@@ -1,0 +1,24 @@
+# Document/ 目录忽略规则（当前主线：HandSkeletonStudio）
+
+# 带后缀的构建目录（根 .gitignore 已覆盖 build/ 与 dist/）
+build-*/
+
+# 录制会话与真实硬件数据集（体积大，本地验收用，不入库）
+testdata/
+recordings/
+
+# 可执行文件与库产物（产品 EXE 在 build*/dist/ 中，已忽略；此处防散落文件）
+*.exe
+*.dll
+
+# Python 参考项目的缓存与输出
+__pycache__/
+*.pyc
+outputs/
+
+# Qt/测试运行时残留
+settings-test-data/
+.qt/
+
+# 编辑器临时文件
+*.user
