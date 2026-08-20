@@ -241,7 +241,11 @@ FusedImuPose FusionBank::processChannel(Channel &channel, const CalibratedImuSam
     channel.restDetector.update(sample.accelerationMps2, sample.gyroscopeRadPerSec, dtSeconds);
     result.restDetected = channel.restDetector.isRest();
 
-    const MagneticHealth health = channel.magneticHealth.update(sample.magneticMicroTesla);
+    const bool magnetometerUsable = channel.calibrationParams.magnetometerEnabled
+        && channel.calibrationParams.magnetometerCalibrated;
+    const MagneticHealth health = magnetometerUsable
+        ? channel.magneticHealth.update(sample.magneticMicroTesla)
+        : MagneticHealth::Unavailable;
     result.magneticHealth = health;
 
     if (!sample.valid) {
@@ -252,8 +256,8 @@ FusedImuPose FusionBank::processChannel(Channel &channel, const CalibratedImuSam
         return result;
     }
 
-    const bool useMagnetometer = (health == MagneticHealth::Healthy || health == MagneticHealth::Recovering)
-        && channel.calibrationParams.magnetometerEnabled;
+    const bool useMagnetometer = magnetometerUsable
+        && (health == MagneticHealth::Healthy || health == MagneticHealth::Recovering);
     CalibratedImuSample fusionSample = sample;
     if (!useMagnetometer) {
         fusionSample.magneticMicroTesla = QVector3D{};

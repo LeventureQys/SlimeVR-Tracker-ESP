@@ -53,6 +53,7 @@ private slots:
     void axisRemapAndSignAppliedToRaw();
     void perSensorParamsAreIndependent();
     void staticGyroBiasConvergesAtRest();
+    void staticGyroBiasAcceptsMeasuredStationaryOffsets();
     void staticGyroBiasFreezesDuringMotion();
     void magneticHardSoftIronCalibrationAndValidation();
     void magneticCalibrationRejectsInsufficientOrDegenerate();
@@ -161,6 +162,21 @@ void CalibrationTest::staticGyroBiasConvergesAtRest()
     QVERIFY(near(double(estimate.x()), 0.01, 1.0e-4));
     QVERIFY(near(double(estimate.y()), -0.005, 1.0e-4));
     QVERIFY(near(double(estimate.z()), 0.002, 1.0e-4));
+}
+
+void CalibrationTest::staticGyroBiasAcceptsMeasuredStationaryOffsets()
+{
+    StaticGyroBiasEstimator estimator;
+    const QVector3D accel(1.82f, -0.57f, 9.89f);
+    const QVector3D bias(0.035f, -0.032f, 0.028f);
+    for (int i = 0; i < 400; ++i) {
+        estimator.update(accel, bias, 0.005);
+    }
+    QVERIFY(estimator.converged());
+    const QVector3D estimate = estimator.bias();
+    QVERIFY(near(double(estimate.x()), double(bias.x()), 1.0e-4));
+    QVERIFY(near(double(estimate.y()), double(bias.y()), 1.0e-4));
+    QVERIFY(near(double(estimate.z()), double(bias.z()), 1.0e-4));
 }
 
 void CalibrationTest::staticGyroBiasFreezesDuringMotion()

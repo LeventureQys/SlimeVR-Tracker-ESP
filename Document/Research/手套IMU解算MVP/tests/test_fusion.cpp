@@ -54,6 +54,7 @@ private slots:
     void nanInfZeroNormProtectionHoldsLastPose();
     void signContinuityNegatesEquivalentQuaternion();
     void magneticHealthHysteresisStateMachine();
+    void uncalibratedMagnetometerStaysSixD();
     void disturbedDegradesToSixDAndRecoveringRateLimitsHeading();
     void madgwickAndVqfProduceUnifiedFieldsOnSameDataset();
 };
@@ -228,9 +229,40 @@ void FusionTest::magneticHealthHysteresisStateMachine()
     QVERIFY(monitor.state() == MagneticHealth::Unavailable);
 }
 
+void FusionTest::uncalibratedMagnetometerStaysSixD()
+{
+    FusionBank bank;
+    CalibratedImuSample sample = makeSample(SensorId::Wrist, 1, 1'000'000,
+                                            QVector3D(0.0f, 0.0f, 9.80665f),
+                                            QVector3D(), QVector3D(0.0f, 50.0f, 0.0f));
+    sample.calibrationState = CalibrationState::Uncalibrated;
+
+    FusedImuPose pose;
+    for (int index = 0; index < 400; ++index) {
+        sample.sequence = quint8(index);
+        sample.timestampNs += 5'000'000;
+        pose = bank.process(sample);
+    }
+    QVERIFY(pose.valid);
+    QVERIFY(pose.mode == FusionMode::SixD);
+    QVERIFY(pose.magneticHealth == MagneticHealth::Unavailable);
+    QVERIFY(std::abs(yawZyxRadians(pose.worldOrientation)) < 1.0e-6);
+
+    SensorCalibrationParams params = SensorCalibrationParams::defaults(SensorId::Wrist);
+    params.magnetometerCalibrated = true;
+    bank.setCalibrationParams(SensorId::Wrist, params);
+    sample.timestampNs += 5'000'000;
+    pose = bank.process(sample);
+    QVERIFY(pose.mode == FusionMode::NineD);
+    QVERIFY(pose.magneticHealth == MagneticHealth::Recovering);
+}
+
 void FusionTest::disturbedDegradesToSixDAndRecoveringRateLimitsHeading()
 {
     FusionBank bank;
+    SensorCalibrationParams params = SensorCalibrationParams::defaults(SensorId::Wrist);
+    params.magnetometerCalibrated = true;
+    bank.setCalibrationParams(SensorId::Wrist, params);
     FusionBank::Settings settings = bank.settings();
     settings.magneticHealth.disturbSamples = 3;
     settings.magneticHealth.recoverSamples = 4;

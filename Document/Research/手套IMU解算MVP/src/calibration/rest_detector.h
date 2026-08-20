@@ -11,8 +11,8 @@ namespace handstudio {
 class RestDetector {
 public:
     struct Config {
-        double gyroNormThresholdRadPerSec = 0.05;
-        double accelNormToleranceMps2 = 0.20;
+        double gyroNormThresholdRadPerSec = 0.06;
+        double accelNormToleranceMps2 = 0.30;
         double accelVarianceThresholdMps2Sq = 0.06;
         double minRestDurationSeconds = 0.5;
         double filterTauSeconds = 0.5;
